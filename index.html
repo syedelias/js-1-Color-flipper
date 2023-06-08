@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Color-flipper" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Color-flipper</title>
+  </head>
+  <body>
+    <section class="head d-flex justify-content-around m-4">
+      <div class="header">
+        <h1>Color Flipper</h1>
+      </div>
+      <div class="nav_bar pt-3">
+        <a href="#" class="fw-bold p-3 text-decoration-none">Simple</a>
+        <a href="#" class="fw-bold text-decoration-none">Hex</a>
+      </div>
+    </section>
+    <section class="container">
+      <h1 class="head2">
+        background Color: <span class="color"> #f1f2f5</span>
+      </h1>
+      <button class="btn btn-hero" id="btn">Click Me</button>
+    </section>
+    <script>
+      let btn = document.getElementById("btn");
+      let color = document.querySelector(".color");
+      let colors = [
+        " rgb(60, 58, 58)",
+        "rgb(243, 199, 199)",
+        " rgb(146, 224, 159)",
+        "rgb(114, 73, 218)",
+      ];
+      btn.addEventListener("click", function () {
+        // console.log(document.body);
+        const randomNumber = getRandomNumber();
+        console.log(randomNumber);
+        document.body.style.backgroundColor = colors[randomNumber];
+        colors.textContent = colors[randomNumber];
+      });
+
+      function getRandomNumber() {
+        return Math.floor(Math.random() * colors.length);
+      }
+    </script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
